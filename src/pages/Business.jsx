@@ -1,8 +1,12 @@
-import React from 'react'
-import {Link, Outlet} from 'react-router'
+import React, {useEffect} from 'react'
+import {Link, Outlet, useNavigate} from 'react-router'
 import SideNavbar from "../components/SideNavbar";
 
 const Business = () => {
+    const navigator= useNavigate()
+    // useEffect(()=>{
+    //    navigator("/business/setup");
+    // },[])
 
     return (
         <>

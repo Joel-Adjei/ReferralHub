@@ -40,11 +40,9 @@ const Options =( {title, next , onClick} )=>{
     )
 }
 const GetStartedOptions = () => {
-    const [state , setState] = useState(null)
-    const { progress , setProgress} = usePlatFormSetup()
-    function handleState() {
-        setProgress("Progress")
-    }
+
+    const { progress , toBusinessProfile , toCustomerData} = usePlatFormSetup()
+
 
     return (
         <>
@@ -56,10 +54,10 @@ const GetStartedOptions = () => {
                 </div>
 
                 <div className={"pt-7"}>
-                    <Options next={progress} onClick={handleState} title={"Set Up Business Profile"}  />
-                    <Options next={progress} title={"Sync Your Customer Data"} />
-                    <Options next={progress} title={"Set Up AI Agent Rules"}  />
-                    <Options next={progress} title={"Set Up AI First Campaign"}  />
+                    <Options next={progress} onClick={toBusinessProfile} title={"Set Up Business Profile"}  />
+                    <Options onClick={toCustomerData} title={"Sync Your Customer Data"} />
+                    <Options  title={"Set Up AI Agent Rules"}  />
+                    <Options  title={"Set Up AI First Campaign"}  />
                 </div>
             </div>
         </>

@@ -24,14 +24,14 @@ const SideNavbar = () => {
     return (
         <>
             <div
-                className={`w-45 h-full bg-white flex flex-col justify-between border-r border-1 border-gray-200 pt-20
+                className={`w-45 h-full bg-white flex flex-col justify-between border-r-1 border-gray-200 pt-20
                     fixed left-0 top-0 z-90`}>
                 <div className={"border-b-1 pb-3 border-gray-200 pr-3"}>
                     <ul>
                         <li> <NavTitles
                                 onClick={()=> {
                                     setActive(1)
-                                    navigator("/business/platformsSetup")
+                                    navigator("/business/setup")
                                 }}
                                 className={`${active === 1 && "bg-gray-200 border-l-3"}` }
                                 active={active} icon={<AiOutlineSetting />}
@@ -48,7 +48,10 @@ const SideNavbar = () => {
                         </li>
                         <li>
                             <NavTitles
-                                onClick={()=> setActive(3)}
+                                onClick={()=> {
+                                    setActive(3)
+                                    navigator("/business/dashboard")
+                                }}
                                 className={`${active === 3 && "bg-gray-200 border-l-3"}` }
                                 icon={<FaLaptopCode />}
                                 title={"Dashboard"}

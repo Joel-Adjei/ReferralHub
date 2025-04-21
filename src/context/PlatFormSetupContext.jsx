@@ -1,16 +1,23 @@
 import React, {createContext, useContext, useState} from 'react'
+import { useNavigate } from "react-router";
+
 const PlatFormSetupContext = createContext();
 
 export const PlatFormSetupContextProvider =({children})=>{
-    const [state , setState] = useState(null)
+    const [ currentState , setCurrentState ] = useState("cusData")
     const [progress, setProgress] = useState("Not Started");
-    function handleState() {
-        setProgress("Progress")
+
+    // const navigator = useNavigate()
+    function changeData() {
+        setCurrentState("cusData")
     }
+
     return(
         <PlatFormSetupContext.Provider value={{
             progress,
-            setProgress
+            setProgress,
+            changeData,
+            currentState,
         }} >
             {children}
         </PlatFormSetupContext.Provider>
